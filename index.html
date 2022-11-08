@@ -4,7 +4,7 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
+      <title>Em bé Yến Nhi</title>
       <style>
             html,
             body {
@@ -22,7 +22,7 @@
         </style>
 </head>
 <body>
-      <canvas id="pinkboard"></canvas>
+      <canvas id="traitim"></canvas>
       <script>
             /*
             * Settings
@@ -36,9 +36,6 @@
                     size: 30, // particle size in pixels
                 },
             };
-            /*
-             * RequestAnimationFrame polyfill by Erik Möller
-             */
             (function () { var b = 0; var c = ["ms", "moz", "webkit", "o"]; for (var a = 0; a < c.length && !window.requestAnimationFrame; ++a) { window.requestAnimationFrame = window[c[a] + "RequestAnimationFrame"]; window.cancelAnimationFrame = window[c[a] + "CancelAnimationFrame"] || window[c[a] + "CancelRequestAnimationFrame"] } if (!window.requestAnimationFrame) { window.requestAnimationFrame = function (h, e) { var d = new Date().getTime(); var f = Math.max(0, 16 - (d - b)); var g = window.setTimeout(function () { h(d + f) }, f); b = d + f; return g } } if (!window.cancelAnimationFrame) { window.cancelAnimationFrame = function (d) { clearTimeout(d) } } }());
     
             /*
@@ -226,15 +223,13 @@
     
                     context.closePath();
                     // create the fill
-                    context.fillStyle = '#ea80b0';
+                    context.fillStyle = '#c0392b';
                     context.fill();
                     // create the image
                     var image = new Image();
                     image.src = canvas.toDataURL();
                     return image;
                 })();
-    
-                // render that thing!
                 function render() {
                     // next animation frame
                     requestAnimationFrame(render);
@@ -276,7 +271,7 @@
                     onResize();
                     render();
                 }, 10);
-            })(document.getElementById('pinkboard'));
+            })(document.getElementById('traitim'));
         </script>
 </body>
 </html>
